@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Comanda" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAYAAAAAAAiAAQAgAYAiAACAAACgAAgAgAA=</HashCode>
+      <FileName>Comanda.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginManager" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAQAAAgAAEAA=</HashCode>
+      <FileName>Login.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mancare" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="Comanda" ManuallyRouted="true">
+      <Path>
+        <Point X="14.25" Y="1.062" />
+        <Point X="14.25" Y="1.357" />
+        <Point X="15.25" Y="1.357" />
+        <Point X="15.25" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAAAIAAAAAAAAAAQIgIAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Mancare.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyException" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAgACA=</HashCode>
+      <FileName>MyException.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Repo&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIIAAAAIAAAAAAAAAEIAABAAAAAAAACAAADAIAAAA=</HashCode>
+      <FileName>Repo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RepoCSV&lt;T&gt;" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAACAAAAAAgAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>RepoCSV.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RepoCustom&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAACAAAgAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>RepoCustom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RepoFile&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAIACAAAAAAAAAAAgAAQIAAAAAAAQDAAAAAA=</HashCode>
+      <FileName>RepoFile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Service&lt;T, V&gt;" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAABAABgAAAAAAAQAgAAQCQEQQAAIAIAIAIQAAA=</HashCode>
+      <FileName>Service.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shopping" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABABAAAAAIAAIAAAAAABUAAAiAgAAAIAAAgAAAAAAA=</HashCode>
+      <FileName>Shopping.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAEAAARACIIBIAIAAAAAIAAAAAAEEI=</HashCode>
+      <FileName>UI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="User" Collapsed="true">
+    <Position X="19" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAAAAAAABAAAIAAEAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>User.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidareComanda" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAACAAAAAA=</HashCode>
+      <FileName>ValidareComanda.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidareMancare" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>ValidareMancare.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidareShopping" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ValidareShopping.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
