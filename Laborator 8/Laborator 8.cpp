@@ -12,6 +12,7 @@
 #include "ValidareComanda.h"
 #include "ValidareMancare.h"
 #include "ValidareShopping.h"
+#include "TesteFunctionalitati.h"
 using namespace std;
 
 
@@ -32,15 +33,16 @@ int main()
 	deleteElemShopping();
 	updateElemShopping();
 	getAllShopping();
-	testValidareComanda();
+	searchByName();
+	//loginTest();
 
-	RepoFile<Mancare> rm;
-	RepoFile<Shopping> rs;
 	ValidareMancare vm;
 	ValidareShopping vs;
-	Service<Mancare, Shopping> s(rm, rs, vm, vs);
+	RepoFile<Comanda&> r;
+	Service<Comanda&> s(r,vm,vs);
 	UI u(s);
 	u.showUI();
+
 
 }
 

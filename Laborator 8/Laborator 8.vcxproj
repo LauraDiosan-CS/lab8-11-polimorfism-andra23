@@ -149,12 +149,15 @@
   <ItemGroup>
     <ClCompile Include="Comanda.cpp" />
     <ClCompile Include="Laborator 8.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="Mancare.cpp" />
     <ClCompile Include="Shopping.cpp" />
     <ClCompile Include="TesteEntitati.cpp" />
+    <ClCompile Include="TesteFunctionalitati.cpp" />
     <ClCompile Include="TesteRepo.cpp" />
     <ClCompile Include="TesteValidare.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="ValidareComanda.cpp" />
     <ClCompile Include="ValidareMancare.cpp" />
     <ClCompile Include="ValidareShopping.cpp" />
@@ -168,9 +171,11 @@
     <ClInclude Include="RepoCSV.h" />
     <ClInclude Include="RepoFile.h" />
     <ClInclude Include="RepoHTML.h" />
+    <ClInclude Include="Serializer.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="Shopping.h" />
     <ClInclude Include="TesteEntitati.h" />
+    <ClInclude Include="TesteFunctionalitati.h" />
     <ClInclude Include="TesteRepo.h" />
     <ClInclude Include="TesteValidare.h" />
     <ClInclude Include="UI.h" />

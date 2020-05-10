@@ -5,6 +5,7 @@
 #include<string.h>
 #include<vector>
 #include<sstream>
+#include "Serializable.h"
 using namespace std;
 // DERIVED CLASS
 template <class T>
@@ -12,6 +13,7 @@ class RepoFile : public Repo<T> {
 protected:
 	const char* fis;
 public:
+	typedef typename std::remove_reference<T>::type V;
 	RepoFile();
 	~RepoFile();
 	RepoFile(const char*);
@@ -25,11 +27,11 @@ public:
 template<class T>
 RepoFile<T>::RepoFile() {
 
-};
+}
 template<class T>
 RepoFile<T>::~RepoFile() {
 
-};
+}
 template <class T>
 RepoFile<T>::RepoFile(const char* fis) {
 
@@ -47,7 +49,6 @@ int RepoFile<T>::delElem(int i) {
 	bol = Repo<T>::delElem(i);
 	saveToFile();
 	return bol;
-
 }
 template<class T>
 int RepoFile<T>::updateElem(int i, T a) {
@@ -58,35 +59,30 @@ int RepoFile<T>::updateElem(int i, T a) {
 }
 template<class T>
 void RepoFile<T>::loadFromFile(const char* fileName) {
+
 	Repo<T>::clearMap();
 	fis = fileName;
-	//fis = new char[strlen(fileName) + 1];
-	//strcpy_s(fis, strlen(fileName) + 1, fileName);
 	string linie;
 	ifstream f(fileName);
 	while (getline(f, linie)) {
 		if (!linie.empty()) {
-			T e(linie, fis);
-			Repo<T>::addElem(e);
+			Repo<T>::addElem(V::fromString(linie, fis));
 		}
 		else break;
-
 	}
 	f.close();
 }
 template<class T>
 void RepoFile<T>::saveToFile() {
-	
-    ofstream f(fis);
+
+	ofstream f(fis);
 	map<int, T> elem;
 	elem = Repo<T>::getAll();
 	for (auto i = elem.begin(); i != elem.end(); i++) {
-		f <<i->second<< "\n";
+		f << i->second << "\n";
 	}
 	f.close();
-
 }
-
 template<class T>
 void RepoFile<T>::clearFile(const char* fileName) {
 
@@ -94,7 +90,6 @@ void RepoFile<T>::clearFile(const char* fileName) {
 	std::string filepath = fileName;
 	File.open(filepath.c_str(), std::ifstream::out | std::ifstream::trunc);
 	if (!File.is_open() || File.fail()) {
-
 		File.close();
 		printf("\nError : failed to erase file content !");
 	}

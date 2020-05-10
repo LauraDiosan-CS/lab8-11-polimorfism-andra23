@@ -102,3 +102,4 @@ ostream& operator<<(ostream& os, const Mancare& m)
 }
 
 
+

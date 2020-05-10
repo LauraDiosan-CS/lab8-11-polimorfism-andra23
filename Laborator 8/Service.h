@@ -6,115 +6,86 @@
 #include "Service.h"
 #include<string>
 #include "MyException.h"
-template <class T, class V>
+#include "Serializable.h"
+using namespace std;
+template <class T>
 class Service {
 private:
-	Repo<T>& r1;
-	Repo<V>& r2;
+	Repo<Comanda&>& r;
 	ValidareComanda& v1;
 	ValidareComanda& v2;
 public:
-	Service(Repo<T>& repo1, Repo<V>& repo2, ValidareComanda& valid1, ValidareComanda& valid2):r1(repo1), r2(repo2), v1(valid1), v2(valid2){ r1 = repo1; r2 = repo2; v1 = valid1; v2 = valid2; };
+	Service(Repo<Comanda&>& repo, ValidareComanda& valid1, ValidareComanda& valid2) :r(repo), v1(valid1), v2(valid2) { r = repo; v1 = valid1; v2 = valid2; };
 	~Service();
-	void addElem1(T t);
-	void addElem2(V v);
-	int delElem1(int);
-	int delElem2(int);
-	int updateElem1(int, T);
-	int updateElem2(int, V);
-	int getSize1();
-	int getSize2();
-	map<int, T> showElem1();
-	map<int, V> showElem2();
-	map<int, T> showT(string);
-	map<int, V> showV(string);
+	void addElem(T t);
+	int delElem(int);
+	int updateElem(int, T);
+	int getSize();
+	Comanda& find(int i);
+	map<int,Comanda&> showElem();
+	map<int,Comanda&> show(string);
+	string getType(T);
 };
-template<class T, class V> Service<T, V>::~Service() {
+template<class T> Service<T>::~Service() {
 
 }
+template<class T> void Service<T>::addElem(T t) {
+	
+	if (getType(t).compare(typeid(Mancare).name()) == 0) {
 
-template<class T, class V> void Service<T, V>::addElem1(T t) {
-
-	v1.validareComanda(t);
-	r1.addElem(t);
+		v1.validareComanda(t);
+	}
+	else {
+		v2.validareComanda(t);
+	}
+	
+	r.addElem(t);
+	
+	
 }
-template<class T, class V> void Service<T, V>::addElem2(V v) {
-
-	v2.validareComanda(v);
-	r2.addElem(v);
-}
-template<class T, class V> int Service<T, V>::delElem1(int i)
+template<class T> int Service<T>::delElem(int i)
 {
-	if (r1.delElem(i) == -1)
+	if (r.delElem(i) == -1)
 		throw MyException("Acest element nu exista.");
 	return 0;
 
 }
-template<class T, class V> int Service<T, V>::delElem2(int i) {
+template<class T> int Service<T>::updateElem(int i, T t) {
 
-	if (r2.delElem(i) == -1)
+	if (r.updateElem(i, t) == -1)
 		throw MyException("Acest element nu exista.");
 	return 0;
 }
+template<class T> int Service<T>::getSize() {
 
-template<class T, class V> int Service<T, V>::updateElem1(int i, T t) {
-
-	if (r1.updateElem(i,t) == -1)
-		throw MyException("Acest element nu exista.");
-	return 0;
+	return r.getSize();
 }
-template<class T, class V> int Service<T, V>::updateElem2(int i, V v) {
+template<class T> map<int,Comanda&> Service<T>::showElem() {
 
-	if (r2.updateElem(i,v) == -1)
-		throw MyException("Acest element nu exista.");
-	return 0;
+	return r.getAll();
 }
+template<class T> Comanda& Service<T>::find(int i) {
 
-template<class T, class V> int Service<T, V>::getSize1() {
-
-	return r1.getSize();
+	return r.find(i);
 }
-template<class T, class V> int Service<T, V>::getSize2() {
-
-	return r2.getSize();
-}
-template<class T, class V> map<int, T> Service<T, V>::showElem1() {
-
-	return r1.getAll();
-}
-template<class T, class V> map<int, V> Service<T, V>::showElem2() {
-
-	return r2.getAll();
-}
-template<class T, class V> map<int, T> Service<T, V>::showT(string username) {
+template<class T> map<int,Comanda&> Service<T>::show(string username) {
 
 	int key = 0;
-	map<int, T> elem;
-	elem = r1.getAll();
-	map<int, T> rez;
+	map<int, Comanda&> elem;
+	elem = r.getAll();
+	map<int, Comanda&> rez;
 	for (auto i = elem.begin(); i != elem.end(); i++) {
 		string ch_username = i->second.getNumeClient();
 		if (username.compare(ch_username) == 0) {
-			rez.insert(pair<int, T>(key++, i->second));
+			rez.insert(pair<int, Comanda&>(key++, i->second));
 
 		}
 	}
 	return rez;
 }
-template<class T, class V> map<int, V> Service<T, V>::showV(string username) {
+template<class T> string Service<T>::getType(T t) {
 
-	int key = 0;
-	map<int, V> elem;
-	elem = r2.getAll();
-	map<int, V> rez;
-	for (auto i = elem.begin(); i != elem.end(); i++) {
-		string ch_username = i->second.getNumeClient();
-		if (username.compare(ch_username) == 0) {
-			rez.insert(pair<int, V>(key++, i->second));
-
-		}
-	}
-	return rez;
+	return typeid(t).name();
 }
 
 

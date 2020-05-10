@@ -18,5 +18,6 @@ public:
 	Mancare& operator=(const Mancare&);
 	bool operator==(const Mancare&);
 	friend ostream& operator<<(ostream& os, const Mancare& c);
+	//Comanda* clone() { return new Mancare(*this); }
 
 };

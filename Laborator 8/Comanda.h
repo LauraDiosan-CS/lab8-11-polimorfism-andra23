@@ -2,8 +2,9 @@
 #include <string>
 #include<iostream>
 #include<vector>
+#include "Serializable.h"
 using namespace std;
-class Comanda {
+class Comanda :Serializable {
 protected:
 	char* numeClient;
 	string adresaClient;
@@ -16,6 +17,7 @@ public:
 	Comanda(string, string);
 	virtual string toStringCSV();
 	virtual string toStringHTML();
+	static Comanda& fromString(string linie, string fileName);
 	char* getNumeClient();
 	string getAdresaClient();
 	float getPretTotal();
@@ -25,7 +27,8 @@ public:
 	Comanda& operator=(const Comanda& c);
 	bool operator==(const Comanda&);
 	friend ostream& operator<<(ostream& os, const Comanda& c);
-	vector<string> readLineFromFile(string, string);
+	static vector<string> readLineFromFile(string, string);
+
 
 };
 

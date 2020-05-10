@@ -17,7 +17,7 @@ public:
 	int getSize();
 	map<int, T> getAll();
 	void clearMap();
-	T find(int i);
+    T find(int i);
 
 };
 template<class T>Repo<T>::Repo() {
@@ -27,6 +27,7 @@ template<class T>Repo<T>::~Repo() {
 template<class T>void Repo<T>::addElem(T e) {
 
 	elem.insert(pair<int, T>(key++, e));
+	
 
 }
 template<class T>int Repo<T>::delElem(int i) {
@@ -39,10 +40,13 @@ template<class T>int Repo<T>::delElem(int i) {
 		return -1;
 
 }
+
 template< class T>int Repo<T>::updateElem(int i, const T nou) {
 
+	
 	if (i >= 0 && i < elem.size()) {
-		elem[i] = nou;
+		delElem(i);
+		elem.emplace(i, nou);
 		return 0;
 	}
 	else
@@ -67,7 +71,13 @@ template<class T>void Repo<T>::clearMap() {
 }
 template<class T>T Repo<T>::find(int i)
 {
-	return elem[i];
+	int poz = 0;
+	for (auto itr = elem.begin(); itr != elem.end(); itr++) {
+		if (poz == i) { return itr->second; }
+		else { itr++; poz++; }
+	}
+	
+	
 }
 
 

@@ -5,7 +5,9 @@ template <class T>
 class RepoHTML :public RepoFile<T> {
 private:
 	const char* fis;
+
 public:
+	typedef typename std::remove_reference<T>::type V;
 	RepoHTML();
 	~RepoHTML();
 	RepoHTML(const char*);
@@ -15,11 +17,11 @@ public:
 template<class T>
 RepoHTML<T>::RepoHTML() {
 
-};
+}
 template<class T>
 RepoHTML<T>::~RepoHTML() {
 
-};
+}
 template <class T>
 RepoHTML<T>::RepoHTML(const char* fisier) {
 
@@ -35,8 +37,7 @@ void RepoHTML<T>::loadFromFile(const char* fileName) {
 	ifstream f(fileName);
 	while (getline(f, linie, '<')) {
 		if (linie.size() > 1) {
-			T e(linie, fis);
-			Repo<T>::addElem(e);
+			Repo<T>::addElem(V::fromString(linie, fis));
 		}
 		getline(f, linie, '>');
 	}
@@ -48,14 +49,12 @@ void RepoHTML<T>::saveToFile() {
 	ofstream f(fis);
 	map<int, T> elem;
 	elem = Repo<T>::getAll();
-	T e;
 	f << "<!DOCTYPE html>\n";
 	f << "<html>\n";
 	f << "<body>\n";
 	for (auto i = elem.begin(); i != elem.end(); i++) {
 		f << "<p>";
-		e = i->second;
-		f << e.toStringHTML();
+		f << (i->second).toStringHTML();
 		f << "</p>\n";
 	}
 	f << "</body>\n";

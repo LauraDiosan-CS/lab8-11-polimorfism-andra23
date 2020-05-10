@@ -13,29 +13,25 @@ public:
 template<class T>
 RepoCSV<T>::RepoCSV() {
 
-};
+}
 template<class T>
 RepoCSV<T>::~RepoCSV() {
 
-};
+}
 template <class T>
 RepoCSV<T>::RepoCSV(const char* fisier) {
 	fis = fisier;
 	RepoFile<T>::loadFromFile(fis);
 }
-
 template<class T>
 void RepoCSV<T>::saveToFile() {
 
 	ofstream f(fis);
 	map<int, T> elem;
 	elem = Repo<T>::getAll();
-	T e;
 	for (auto i = elem.begin(); i != elem.end(); i++) {
-		e = i->second;
-		f << e.toStringCSV() << "\n";
+		f << (i->second).toStringCSV() << "\n";
 	}
-
 	f.close();
 
 }

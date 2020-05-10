@@ -5,23 +5,19 @@
 class UI {
 private:
 	bool logIn = false;
-	Service<Mancare, Shopping>* s;
+	Service<Comanda&>* s;
 	void addComandaMancare();
-	void showComenziMancare();
-	void deleteComandaMancare();
-	void updateComandaMancare();
+	void deleteComanda();
+	void updateComanda();
 	void addComandaShopping();
-	void showComenziShopping();
-	void deleteComandaShopping();
-	void updateComandaShopping();
+	void showComenzi();
 	void choseFile();
 	void login();
 	void searchByName();
 	void Logout();
 	void PrintMenu();
-
 public:
-	UI(Service<Mancare, Shopping>& serv) :s(&serv) {  };
+	UI(Service<Comanda&>& serv) :s(&serv) {  };
 	~UI(){}
 	void showUI();
 

@@ -1,52 +1,6 @@
-﻿  Comanda.cpp
-  Laborator 8.cpp
-  Shopping.cpp
-  TesteEntitati.cpp
-  TesteRepo.cpp
-C:\Users\hp\source\repos\Laborator 8\Repo.h(54,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hp\source\repos\Laborator 8\Repo.h(52): message : while compiling class template member function 'int Repo<T>::getSize(void)'
-          with
-          [
-              T=Comanda
-          ]
-C:\Users\hp\source\repos\Laborator 8\TesteRepo.cpp(13): message : see reference to function template instantiation 'int Repo<T>::getSize(void)' being compiled
-          with
-          [
-              T=Comanda
-          ]
-C:\Users\hp\source\repos\Laborator 8\RepoFile.h(11): message : see reference to class template instantiation 'Repo<T>' being compiled
-          with
-          [
-              T=Comanda
-          ]
-C:\Users\hp\source\repos\Laborator 8\RepoCSV.h(4): message : see reference to class template instantiation 'RepoFile<T>' being compiled
-          with
-          [
-              T=Comanda
-          ]
-C:\Users\hp\source\repos\Laborator 8\TesteRepo.cpp(12): message : see reference to class template instantiation 'RepoCSV<Comanda>' being compiled
-  TesteValidare.cpp
-C:\Users\hp\source\repos\Laborator 8\TesteValidare.cpp(30,21): warning C4101: 'e': unreferenced local variable
-C:\Users\hp\source\repos\Laborator 8\TesteValidare.cpp(41,21): warning C4101: 'e': unreferenced local variable
-C:\Users\hp\source\repos\Laborator 8\TesteValidare.cpp(55,21): warning C4101: 'e': unreferenced local variable
-C:\Users\hp\source\repos\Laborator 8\TesteValidare.cpp(66,21): warning C4101: 'e': unreferenced local variable
-C:\Users\hp\source\repos\Laborator 8\Repo.h(54,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hp\source\repos\Laborator 8\Repo.h(52): message : while compiling class template member function 'int Repo<T>::getSize(void)'
-          with
-          [
-              T=Mancare
-          ]
-C:\Users\hp\source\repos\Laborator 8\Service.h(67): message : see reference to function template instantiation 'int Repo<T>::getSize(void)' being compiled
-          with
-          [
-              T=Mancare
-          ]
-C:\Users\hp\source\repos\Laborator 8\RepoHTML.h(30): message : while compiling class template member function 'void RepoHTML<Mancare>::loadFromFile(const char *)'
-C:\Users\hp\source\repos\Laborator 8\RepoHTML.h(27): message : see reference to function template instantiation 'void RepoHTML<Mancare>::loadFromFile(const char *)' being compiled
-C:\Users\hp\source\repos\Laborator 8\TesteValidare.cpp(14): message : see reference to class template instantiation 'RepoHTML<Mancare>' being compiled
+﻿  Login.cpp
   UI.cpp
-  ValidareComanda.cpp
-  ValidareMancare.cpp
-  ValidareShopping.cpp
+  User.cpp
   Generating Code...
-  Laborator 8.vcxproj -> C:\Users\hp\source\repos\Laborator 8\x64\Debug\Laborator 8.exe
+Laborator 8.obj : error LNK2019: unresolved external symbol "void __cdecl loginTest(void)" (?loginTest@@YAXXZ) referenced in function main
+C:\Users\hp\source\repos\Laborator 8\x64\Debug\Laborator 8.exe : fatal error LNK1120: 1 unresolved externals

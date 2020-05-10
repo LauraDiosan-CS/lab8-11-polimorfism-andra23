@@ -48,6 +48,15 @@
     <ClCompile Include="ValidareComanda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TesteFunctionalitati.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Comanda.h">
@@ -102,6 +111,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RepoHTML.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TesteFunctionalitati.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

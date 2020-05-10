@@ -1,2 +1,3 @@
+C:\Users\hp\source\repos\x64\Debug\Laborator 8.exe.lastcodeanalysissucceeded
 C:\Users\hp\source\repos\Laborator 8\x64\Debug\Laborator 8.exe
 C:\Users\hp\source\repos\Laborator 8\x64\Debug\Laborator 8.pdb

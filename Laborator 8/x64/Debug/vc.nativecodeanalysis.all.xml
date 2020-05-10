@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\hp\source\repos\Laborator 8\</FILEPATH>
+      <FILENAME>RepoFile.h</FILENAME>
+      <LINE>26</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'RepoFile&lt;Comanda&gt;::fis' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>RepoFile&lt;Comanda&gt;::{ctor}</FUNCTION>
+    <DECORATED>??0?$RepoFile@VComanda@@@@QEAA@XZ</DECORATED>
+    <FUNCLINE>26</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>RepoFile&lt;Comanda&gt;::fis</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

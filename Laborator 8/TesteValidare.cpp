@@ -10,22 +10,21 @@
 #include "RepoHTML.h"
 #include "RepoCSV.h"
 #include "MyException.h"
+
 void testValidareComanda() {
-	RepoHTML<Mancare> r1("Teste.html");
-	RepoHTML<Shopping> r2("Teste.html");
-	ValidareMancare v;
-	ValidareShopping sv;
-	Service<Mancare, Shopping> s(r1, r2, v, sv);
-	assert(s.getSize1() == 0);
-	assert(s.getSize2() == 0);
+	RepoHTML<Comanda&> r("Teste.html");
+	ValidareMancare v1;
+	ValidareShopping v2;
+	Service<Comanda&> s(r,v1, v2);
+	assert(s.getSize() == 0);
 	vector<string> lista;
 	lista.push_back("Portocale");
 	lista.push_back("Paine");
 	lista.push_back("Biscuiti");
-	Mancare m1("Anca", "Strada Dorobantilor Nr.23", -9, lista);
+	Mancare* m1=new Mancare("Anca", "Strada Dorobantilor Nr.23", -9, lista);
 	bool exceptionThrown = false;
 	try {
-		s.addElem1(m1);
+		s.addElem(*m1);
 	}
 	catch (MyException e)
 	{
@@ -33,10 +32,10 @@ void testValidareComanda() {
 	}
 	assert(exceptionThrown);
 	vector<string> lista1;
-	Mancare m2("Anca", "Strada Dorobantilor Nr.23", 23, lista1);
+	Mancare*m2=new Mancare("Anca", "Strada Dorobantilor Nr.23", 23, lista1);
 	bool exceptionThrown1 = false;
 	try {
-		s.addElem1(m2);
+		s.addElem(*m2);
 	}
 	catch (MyException e)
 	{
@@ -47,10 +46,10 @@ void testValidareComanda() {
 	lista.push_back("Portocale");
 	lista.push_back("Servetele");
 	lista.push_back("Caiete");
-	Shopping sp("Anca", "Strada Dorobantilor Nr.23", -9, lista2, "CoraM");
+	Shopping*sp=new Shopping("Anca", "Strada Dorobantilor Nr.23", -9, lista2, "CoraM");
 	bool exceptionThrown2 = false;
 	try {
-		s.addElem2(sp);
+		s.addElem(*sp);
 	}
 	catch (MyException e)
 	{
@@ -58,10 +57,10 @@ void testValidareComanda() {
 	}
 	assert(exceptionThrown2);
 	vector<string> lista3;
-	Shopping sp1("Anca", "Strada Dorobantilor Nr.23", 23, lista3, "CoraM");
+	Shopping*sp1=new Shopping("Anca", "Strada Dorobantilor Nr.23", 23, lista3, "CoraM");
 	bool exceptionThrown3 = false;
 	try {
-		s.addElem2(sp1);
+		s.addElem(*sp1);
 	}
 	catch (MyException e)
 	{
@@ -69,4 +68,5 @@ void testValidareComanda() {
 	}
 	assert(exceptionThrown3);
 }
+
 
